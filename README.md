@@ -48,7 +48,7 @@ Please explain step by step how to run the code/model and include information ab
 
 #### TCP/IP Communication
 
-## Face Detection with Arduino Uno using Serial Communication
+## Arduino Uno Robot with Android Face Detection and Tracking
 ### Required Toolboxes or Software
 * Simulink Support Package for Arduino Hardware
 * Simulink Support Package for Android Devices 
