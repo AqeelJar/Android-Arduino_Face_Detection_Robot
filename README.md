@@ -25,22 +25,58 @@ A description of the implementation and the approached adopted.
 Please explain step by step how to run the code/model and include information about what toolboxes and other resources needed to run it.
 
 ## Face Detection Application on Android Device
-
-### Required Toolboxes
+### Required Toolboxes or Software
+* Simulink Support Package for Android Devices 
+  * Android Studio (Arctic Fox 2020.3.1 Patch 4)
+    * Android SDK Build Tools - 32.0.0
+    * NDK (side-by-side) - 23.1.7779620
+    * Android SDK Platform Tools - 32
+  * Open CV Library - 4.5.2
+  * ARM Compute Library - 19.05
+* Computer Vision Toolbox
+* C++ Compiler (preferably Microsoft Visual Studio compiler)
+* Embedded Coder add-on
+### Procedure
 
 ## Control Arduino Uno Robot with Android Device
+### Required Toolboxes or Software
+* Simulink Support Package for Arduino Hardware
+* Embedded Coder
+### Procedure
 
-### Serial Communication
+#### Serial Communication
 
-### TCP/IP Communication
+#### TCP/IP Communication
 
 ## Face Detection with Arduino Uno using Serial Communication
+### Required Toolboxes or Software
+* Simulink Support Package for Arduino Hardware
+* Simulink Support Package for Android Devices 
+  * Android Studio (Arctic Fox 2020.3.1 Patch 4)
+    * Android SDK Build Tools - 32.0.0
+    * NDK (side-by-side) - 23.1.7779620
+    * Android SDK Platform Tools - 32
+  * Open CV Library - 4.5.2
+  * ARM Compute Library - 19.05
+* Computer Vision Toolbox
+* C++ Compiler (preferably Microsoft Visual Studio compiler)
+* Embedded Coder add-on
+### Procedure
 
-## Additional Codes
+## Additional Codes (Standalone Arduino)
+### Required Toolboxes or Software
+* Arduino IDE Software
+* Libraries?
 
+#### Obstacle Avoidance Robot
+
+#### Line Following Robot
 
 # Demo
 Add a video or animated gif/picture to showcase the code in operation.
   
-# Reference
+# References
 Add reference papers, data, or supporting material that has been used, if any.
+1. [Detect and Track Face on Android Device](https://www.mathworks.com/help/supportpkg/android/ref/detect-and-track-face-on-an-android-device.html)
+2. [Controlling Elegoo Robot using Android Phone](https://www.youtube.com/watch?v=Tr4ih_EBk8c)
+3. [TCP/IP Connection with Android Devices Example](https://www.mathworks.com/help/supportpkg/android/ref/connect-android-device-to-lego-mindstorms-ev3.html)
