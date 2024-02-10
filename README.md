@@ -1,13 +1,11 @@
 # Android Face Detection and Human Tracking Arduino Robot
-Solution to project number 214 in the MATLAB and Simulink Challenge.
+Solution to project number 214 in the [MATLAB and Simulink Challenge](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub).
 
 The solution uses an android device to detect and determine the position of a human face and then the android device sends the required response to the Arduino Uno robot to move the robot in the required direction to achieve a predefined distance between the robot and the human.
 
 The solution uses simulink and matlab codes to detect and track the human face as well as controlling the Arduino Uno robot.
 
 Please add the following items:
-
-[Program link](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub)
 
 [Project description link](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub/tree/main/projects/Face%20Detection%20and%20Human%20Tracking%20Robot#project-description)
 
