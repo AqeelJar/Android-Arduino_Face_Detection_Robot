@@ -38,7 +38,7 @@ Please explain step by step how to run the code/model and include information ab
 * Embedded Coder add-on
 ### Procedure
 
-## Control Arduino Uno Robot with Android Device
+## Control Arduino Uno Robot with Android Device/s
 ### Required Toolboxes or Software
 * Simulink Support Package for Arduino Hardware
 * Embedded Coder
