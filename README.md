@@ -156,7 +156,10 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 17. Play around with the Face Detection and Tracking Android-Arduino Uno robot.
 
 # Demo
-Add a video or animated gif/picture to showcase the code in operation.
+1. [Face Detection App](Link)
+2. [Button Control with Direct Serial communication](Link)
+3. [Button Control with TCP/IP Communication between android devices](Link)
+4. [Arduino Uno Robot with Android Face Detection and Tracking](Link)
   
 # References
 1. [Detect and Track Face on Android Device](https://www.mathworks.com/help/supportpkg/android/ref/detect-and-track-face-on-an-android-device.html)
