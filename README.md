@@ -23,6 +23,12 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 
 # How to run section
+1. [Face Detection Application on Android Device](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#face-detection-application-on-android-device)
+2. [Control Arduino Uno Robot with Android Device/s](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#control-arduino-uno-robot-with-android-devices)
+   - [Arduino Uno Controller](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#arduino-uno-controller-controlarduinorobotslx)
+   - [Direct Serial Communication](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#direct-serial-communication-buttoncontrolappslx)
+   - [TCP/IP Communication between Android Devices](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#tcpip-communication-between-android-devices)
+4. [Arduino Uno Robot with Android Face Detection and Tracking](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#arduino-uno-robot-with-android-face-detection-and-tracking)
 
 ## Required Hardware
 * 1-2 Android Devices
@@ -52,7 +58,7 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 ## Face Detection Application on Android Device 
 
-### Android Device ([FaceDetectionApp.slx](Link))
+### Android Device ([FaceDetectionApp.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Face%20Detection%20App/FaceDetectionApp.slx))
 1. Launch the Simulink model on MATLAB.
 2. Connect the Android device to the computer.
 3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device and make sure that the connected Android device is visible under the device options in the target hardware resources setting. 
@@ -64,14 +70,14 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 ## Control Arduino Uno Robot with Android Device/s
 
-### Arduino Uno Controller ([ControlArduinoRobot.slx](Link))
+### Arduino Uno Controller ([ControlArduinoRobot.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/ContolArduinoRobot.slx))
 1. Launch the Simulink model on MATLAB.
 2. Connect the Arduino Uno robot to the computer.
 3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Arduino Uno. If the the port number of the connected Arduino Uno board is known, the number can be manually inputted under Host COM port found in the Target hardware resources under Host-Board connection.
 5. Build, Deploy and Start the Simulink model on the connected Arduino Uno board.
 6. After deploying the robot would have the required program to control the motors, but the type of communication between android device and Arduino robot needs to be established and both communication types do not affect the programming of the control of the Arduino robot.
 
-#### Direct Serial Communication ([ButtonControlApp.slx](Link))
+#### Direct Serial Communication ([ButtonControlApp.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/Direct%20Serial%20Communication/ButtonControlApp.slx))
 1. Launch the Simulink model on MATLAB.
 2. Connect the Android device to the computer.
 3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device and make sure that the connected Android device is visible under the device options in the target hardware resources setting.
@@ -85,26 +91,26 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 11. Play around with the wired Arduino Uno robot.
 
 #### TCP/IP Communication between Android Devices 
-##### Both Android Devices ([ButtonControlApp_Client.slx](Link)) ([ButtonControlApp_Server.slx](Link))
+##### Both Android Devices ([ButtonControlApp_Client.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/TCP-IP%20Communication/ButtonControlApp_Client.slx)) ([ButtonControlApp_Server.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/TCP-IP%20Communication/ButtonControlApp_Server.slx))
 1. Make sure that both Android devices are connected to the same Wi-Fi network.
 2. Once both Android devices are connected, one android device would be the server device (First Android Device) and the other would be the client device (Second Android Device). The IP address of the server would need to be known. This can be found under the connected Wi-Fi settings on the Android device or if the FaceDetectionApp model was deployed on the device the IP address can be found in the Info tab while using the application. Write down or memorise the IP address of the server.
 3. Launch both Simulink models on MATLAB.
 4. If there is enough ports on the computer, connect both Android devices to the computer. If not, then connect one device at a time when deploying the different Simulink models
 5. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device.
 
-##### First Android Device ([ButtonControlApp_Server.slx](Link))
+##### First Android Device ([ButtonControlApp_Server.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/TCP-IP%20Communication/ButtonControlApp_Server.slx))
 6. In the hardware settings, make sure that the first Android device is visible under the device options in the target hardware resources setting.
 7. Make sure that the TCP/IP send block is in server mode with a port number of 25000. This number should match the client port details on the Second android device.
 8. Build, Deploy and Start the Simulink model on the First Android Device.
 9. After deploying the application on the android device, allow all permissions that may show on the android display screen.
 
-##### Second Android Device ([ButtonControlApp_Client.slx](Link))
+##### Second Android Device ([ButtonControlApp_Client.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/TCP-IP%20Communication/ButtonControlApp_Client.slx))
 10. In the hardware settings, make sure that the second Android device is visible under the device options in the target hardware resources setting.
 11. Make sure that the TCP/IP receive block is in client mode with a port number of 25000 (same as the server) and that the Remote IP address matches the server's IP address. Also make sure that the data type is set to uint8.
 12. Build, Deploy and Start the Simulink model on the First Android Device.
 13. After deploying the application on the android device, allow all permissions that may show on the android display screen.
 
-##### Both Android Devices ([ButtonControlApp_Client.slx](Link)) ([ButtonControlApp_Server.slx](Link))
+##### Both Android Devices ([ButtonControlApp_Client.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/TCP-IP%20Communication/ButtonControlApp_Client.slx)) ([ButtonControlApp_Server.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20Control/TCP-IP%20Communication/ButtonControlApp_Server.slx))
 14. After deploying both Simulink models on their corresponding Android device, make sure the TCP/IP connection is connected under the Log tab on both Android devices.
 15. Connect the second device to the Arduino robot using a USB cable and USB to type-C convertor and attach the second android device to the Arduino robot such that the android device would not fall off when the robot begins to move.
 16. Ensure that the USB connector is connected which is shown in the notification tab on the second android device.
@@ -116,7 +122,7 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 ## Arduino Uno Robot with Android Face Detection and Tracking
 
-### Android Device ([FaceDetectResponseApp.slx](Link))
+### Android Device ([FaceDetectResponseApp.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20with%20Android%20Face%20Detection/FaceDetectResponseApp.slx))
 1. Launch the Simulink model on MATLAB.
 2. Connect the Android device to the computer.
 3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device and make sure that the connected Android device is visible under the device options in the target hardware resources setting. 
@@ -131,7 +137,7 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
    - Reverse = 2
    - Right = 3
    - Left = 4
-### Arduino Uno Controller ([ControlArduinoRobot.slx](Link))
+### Arduino Uno Controller ([ControlArduinoRobot.slx](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Arduino%20Uno%20Robot%20with%20Android%20Face%20Detection/ContolArduinoRobot.slx))
 1. Launch the Simulink model on MATLAB.
 2. Connect the Arduino Uno robot to the computer.
 3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Arduino Uno. If the the port number of the connected Arduino Uno board is known, the number can be manually inputted under Host COM port found in the Target hardware resources under Host-Board connection.
