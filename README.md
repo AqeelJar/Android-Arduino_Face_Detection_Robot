@@ -23,7 +23,6 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 
 # How to run section
-Please explain step by step how to run the code/model and include information about what toolboxes and other resources needed to run it.
 
 ## Required Hardware
 * 1-2 Android Devices
@@ -50,7 +49,6 @@ Please explain step by step how to run the code/model and include information ab
  * [Choose a compiler in MATLAB](https://www.mathworks.com/help/matlab/matlab_external/choose-c-or-c-compilers.html)
 * [Embedded Coder add-on](https://www.mathworks.com/products/embedded-coder.html)
 * [Arduino IDE Software with relevant driver installations](https://www.arduino.cc/en/software)
-
 
 ## Face Detection Application on Android Device 
 
@@ -155,7 +153,6 @@ Please explain step by step how to run the code/model and include information ab
 Add a video or animated gif/picture to showcase the code in operation.
   
 # References
-Add reference papers, data, or supporting material that has been used, if any.
 1. [Detect and Track Face on Android Device](https://www.mathworks.com/help/supportpkg/android/ref/detect-and-track-face-on-an-android-device.html)
 2. [Controlling Elegoo Robot using Android Phone](https://www.youtube.com/watch?v=Tr4ih_EBk8c)
 3. [TCP/IP Connection with Android Devices Example](https://www.mathworks.com/help/supportpkg/android/ref/connect-android-device-to-lego-mindstorms-ev3.html)
