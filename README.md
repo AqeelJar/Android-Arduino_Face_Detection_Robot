@@ -1,90 +1,155 @@
 # Android Face Detection and Human Tracking Arduino Robot
 Solution to project number 214 in the [MATLAB and Simulink Challenge](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub).
 
-The solution uses an android device to detect and determine the position of a human face and then the android device sends the required response to the Arduino Uno robot to move the robot in the required direction to achieve a predefined distance between the robot and the human.
+Project Title: [Face Detection and Human Tracking Robot](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub/tree/main/projects/Face%20Detection%20and%20Human%20Tracking%20Robot#project-description)
+## Problem Description 
+In many computer vision applications, such as activity identification, automobile safety, smart home security applications, and surveillance, human-robot interaction is crucial. A robot's job is to be an efficient assistant to aid humans with their tasks. The robot must be proficient in communicating with and interacting with people. In this situation, the main requirement for the vision system in this type of robot is a human face-tracking system. Robotic human-robot interaction can be improved via face detection. Detecting and tracking humans automatically using a sensor or algorithm is a difficult problem due to the wide variety of positions, system complexity, and is, ultimately, a detailed optimization problem.
 
-The solution uses simulink and matlab codes to detect and track the human face as well as controlling the Arduino Uno robot.
-
-Please add the following items:
-
-[Project description link](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub/tree/main/projects/Face%20Detection%20and%20Human%20Tracking%20Robot#project-description)
-
+Therefore, a low-cost, user-friendly, and real-time autonomous human tracking robot using an Android mobile was put into action. The human tracking is done by a face detection Simulink model on the Android device while the real-time control is done by an Arduino Uno Controller. The face detection model was designed using the Computer Vision Toolbox and Deep Learning Toolbox on Simulink. The hardware support packages are used to interface and deploy the Android and Arduino devices with Simulink models. The different types of connection available between the Aandroid device and Arduino Uno controller was also taken into consideration. The Android device was able to run the face detection algorithm and send the required information to the Arduino Controller to control the movements of the robot to achieve a predefined distance between the robot and the human. Therefore, a deep learning-based face detection and tracking Robot was developed.
 
 # Project details
-A description of the implementation and the approached adopted.
 
-1. Generate a face dectection algorithm in simulink that can be used on an android device (samsung).
-2. Control the Arduino Uno robot using a Serial Connection between the android and Arduino.
-3. Control the Arduino Uno robot using a TCP/IP Connection between 2 android devices (since the Arduino Uno robot doesn't have built-in wireless communication signals to android device)
-4. Face Detection on android device used to control Arduino Uno robot (wired or wireless connection is decided here)
-5. Additional Codes for the Arduino Uno robot (Standalone)
+1. A face detection simulink model was deployed on an android device. The postion of the detected face is used to determine the midpoint of the detected face and the maximum area that the detected face should be to achieve a predifined distance between the camera and detected face. Using the above information, a response algorithm can be modelled using a MATLAB function in simulink. This function would be able to determine whether the camera should move forward, turn right, turn left, move back or stop based on the position and area of the detected face in the video frame.
+
+2. Control the Arduino Uno robot using a input response signal. Before using the Simulink models on the Arduino Uno robot, the performance of the robot was tested using the Line Tracking Code and Obstacle Avoidance code using the Arduino IDE software and was deemed acceptable to use for the project. The Arduino Uno robot should be controlled using an input response signal coming from the android device or computer. To achieve this, a switch-case block in Simulink is used to read the input signal and determine which digital pin signal configuration should be sent to the motors to achieve a specific motion. The speed can also be changed based on the amount of voltage is sent to the motor control module. This is also modelled using Simulink. The input response signal can only be commuincate via a serial connection to the Arduino Uno board.
+
+3. Communication between the Android device and Arduino Uno robot. Two connection types were investigated. The TCP/IP connection between Android devices and the direct serial connection. A button control application is developed to test both connections to see if there are any faults when using both connections. The application allows the user to press a response from the Android display and send out the response via the connection type. The application has a safety feature that causes the robot to stop when more than one button is pressed. Both connections showed impressive response times. Each connection type is best under different applications. In terms of the Button Control Application, the TCP/IP connection is the optimal connection type as the user can move independently from the robot. However, in terms of the face detection application, the direct serial connection would be the optimal connection type as the device would be attached to the robot and is expected to move with robot.
+   - The **direct serial connection** allows the android device to be connected to the Arduino robot using a type-C to USB converter and USB cable. The Button Control Application was deployed on the android device with a serial send connection block. This connection type is considered a wired connection and constraints the motion of the robot to the length of the wire. The user is expected to move with the robot.
+   - The **TCP/IP connection** allows the first android device (server) to send out an input response signal using the Button control application with a TCP/IP send block in Simulink. A second android device (client) receives the input repsonse signal using a TCP/IP receive block and sends out the signal using a direct serial connection. This connection is was developed due to the Arduino Uno having no wireless connection modules that can be used on Simulink to connect to the android device. The second android device would be fixed to the Arduino robot and the first android device would be with the user. This allows the user to be in one position while the robot moves in different positions. Both android devices are expected to be on the same Wi-Fi network to achieve this connection. If the Wi-Fi network is busy, then the robot would respond with a delay or time lag. Thus, it is suggessted to use a private and controlled Wi-Fi network.
+  
+4. Using modified the face detection model and the Arduino robot model, the final face detection and tracking Arduino robot model can be deployed. The android device would need to be attached to the Arduino robot. Thus, a selfie stick with a couple of elastic bands and cable ties allows the android device to be placed high enough to detect a face without causing the android device to fall. A ballast was also used to conteract the lever weight due to the selfie stick and phone. The mass of the ballast can be modified to achieve enough friction on the wheels to move the robot at a controlled speed to allow the face detection algorithm to detect a face in each video frame. This allows the robot to move towards the human when they change their location.
+
+5. The face detection and tracking robot is able to keep a predefined distance between the camera and the detected face using the Simulink models for the Android device and Arduino Uno board that was explained above.
+
 
 # How to run section
 Please explain step by step how to run the code/model and include information about what toolboxes and other resources needed to run it.
 
-## Face Detection Application on Android Device
-### Required Hardware
-* An Android Device
+## Required Hardware
+* 1-2 Android Devices
+* [USB to Type-C Data & Fast Charging Cable](https://www.takealot.com/usb-to-type-c-data-fast-charging-cable-for-samsung-1m/PLID73135642)
+* [Elegoo Arduino Uno Robot Car Kit V3.0](https://www.elegoo.com/products/elegoo-smart-robot-car-kit-v-3-0-plus)
+* 2x[Rechargeable Battery - 18650 - 4200mAH](https://www.takealot.com/rechargeable-battery-18650-4200mah/PLID57464670)
+* [USB to type-C convertor](https://www.takealot.com/innovatex-usb-3-0-to-type-c-adaptor-transfer-speeds-up-to-5gbps-/PLID93523584)
+* [Serial Connection Cable](https://www.takealot.com/hq-usb-2-0-a-to-b-3-0m-hp-canon-lexmark-printer-cable/PLID71037965?gad_source=1&gclid=CjwKCAiA_aGuBhACEiwAly57MeJWeZzAQiE4Sr9q8wg4TXOIqfKfltW6FqdJqaUklDWqF5TO4Fw-OhoC8kAQAvD_BwE&gclsrc=aw.ds)
+* Selfie Stick (Attach phone to Arduino robot)
 
-### Required Toolboxes or Software
-* Simulink Support Package for Android Devices 
-  * Android Studio (Arctic Fox 2020.3.1 Patch 4)
+## Required Toolboxes or Software
+* [MATLAB R2023a](https://www.mathworks.com/products/new_products/release2023a.html)
+* [Simulink Support Package for Arduino Hardware](https://www.mathworks.com/matlabcentral/fileexchange/40312-simulink-support-package-for-arduino-hardware)
+* [Simulink Support Package for Android Devices](https://www.mathworks.com/hardware-support/android-programming-simulink.html) 
+  * [Android Studio (Arctic Fox 2020.3.1 Patch 4)](https://developer.android.com/studio/archive)
     * Android SDK Build Tools - 32.0.0
     * NDK (side-by-side) - 23.1.7779620
     * Android SDK Platform Tools - 32
   * Open CV Library - 4.5.2
   * ARM Compute Library - 19.05
-  * Android Device Driver (This should correspond to the make of the android device used)
-* Computer Vision Toolbox
-* C++ Compiler (preferably Microsoft Visual Studio compiler)
-* Embedded Coder add-on
-### Procedure
+* [Computer Vision Toolbox](https://www.mathworks.com/products/computer-vision.html)
+* [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
+* [C++ Compiler (preferably Microsoft Visual Studio compiler)](https://visualstudio.microsoft.com/vs/features/cplusplus/)
+ * [Choose a compiler in MATLAB](https://www.mathworks.com/help/matlab/matlab_external/choose-c-or-c-compilers.html)
+* [Embedded Coder add-on](https://www.mathworks.com/products/embedded-coder.html)
+* [Arduino IDE Software with relevant driver installations](https://www.arduino.cc/en/software)
+
+
+## Face Detection Application on Android Device 
+
+### Android Device ([FaceDetectionApp.slx](Link))
+1. Launch the Simulink model on MATLAB.
+2. Connect the Android device to the computer.
+3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device and make sure that the connected Android device is visible under the device options in the target hardware resources setting. 
+4. In the Face detection and Tracking Block, open the Android camera block properties and select the back camera with a pixel size of 384x384.
+5. Build, Deploy and Start the Simulink model on the Android device.
+6. After deploying the application on the android device, allow all permissions that are shown on the android display screen.
+7. Ensure that the phone is rotated 90 deg counterclockwise such that the phone is in a landscape position. The face detection algorithm only works in this position.
+8. Ensure that the coordinates of the corner points are of expected values.
 
 ## Control Arduino Uno Robot with Android Device/s
-### Required Hardware
-* 1-2 Android Devices
-* Elegoo Arduino Uno Robot Car Kit V3.0 (If using a different Ardunio setup, the simulink model would need to be modified)
-* Micro usb to USB convertor
-* Serial Connection Cable
-* Selfie Stick (Attach phone to Arduino robot)
-### Required Toolboxes or Software
-* Simulink Support Package for Arduino Hardware
-* Embedded Coder
-### Procedure
 
-#### Serial Communication
+### Arduino Uno Controller ([ControlArduinoRobot.slx](Link))
+1. Launch the Simulink model on MATLAB.
+2. Connect the Arduino Uno robot to the computer.
+3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Arduino Uno. If the the port number of the connected Arduino Uno board is known, the number can be manually inputted under Host COM port found in the Target hardware resources under Host-Board connection.
+5. Build, Deploy and Start the Simulink model on the connected Arduino Uno board.
+6. After deploying the robot would have the required program to control the motors, but the type of communication between android device and Arduino robot needs to be established and both communication types do not affect the programming of the control of the Arduino robot.
 
-#### TCP/IP Communication
+#### Direct Serial Communication ([ButtonControlApp.slx](Link))
+1. Launch the Simulink model on MATLAB.
+2. Connect the Android device to the computer.
+3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device and make sure that the connected Android device is visible under the device options in the target hardware resources setting.
+4. Build, Deploy and Start the Simulink model on the connected Android Device.
+5. After deploying the application on the android device, allow all permissions that may show on the android display screen.
+6. Connect the Android device to the Arduino robot using the USB cable and USB to type-C convertor.
+7. Ensure that the USB connector is connected which is shown in the notification tab on the android device.
+8. Ensure that the battery pack is turned on.
+9. Test out the connection by pressing any of the displayed buttons on the display screen.
+10. If no movement is shown but noise is coming from the board, either the batteries are low or the CarSpeed variable is too low. Modify the ControlArduinoRobot model and increase the CarSpeed to any value not more than 255 then follow the same steps to deploy the ControlArduinoRobot model on the Arduino robot. The steps for the communication type doesn't need to be repeated.
+11. Play around with the wired Arduino Uno robot.
+
+#### TCP/IP Communication between Android Devices 
+##### Both Android Devices ([ButtonControlApp_Client.slx](Link)) ([ButtonControlApp_Server.slx](Link))
+1. Make sure that both Android devices are connected to the same Wi-Fi network.
+2. Once both Android devices are connected, one android device would be the server device (First Android Device) and the other would be the client device (Second Android Device). The IP address of the server would need to be known. This can be found under the connected Wi-Fi settings on the Android device or if the FaceDetectionApp model was deployed on the device the IP address can be found in the Info tab while using the application. Write down or memorise the IP address of the server.
+3. Launch both Simulink models on MATLAB.
+4. If there is enough ports on the computer, connect both Android devices to the computer. If not, then connect one device at a time when deploying the different Simulink models
+5. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device.
+
+##### First Android Device ([ButtonControlApp_Server.slx](Link))
+6. In the hardware settings, make sure that the first Android device is visible under the device options in the target hardware resources setting.
+7. Make sure that the TCP/IP send block is in server mode with a port number of 25000. This number should match the client port details on the Second android device.
+8. Build, Deploy and Start the Simulink model on the First Android Device.
+9. After deploying the application on the android device, allow all permissions that may show on the android display screen.
+
+##### Second Android Device ([ButtonControlApp_Client.slx](Link))
+10. In the hardware settings, make sure that the second Android device is visible under the device options in the target hardware resources setting.
+11. Make sure that the TCP/IP receive block is in client mode with a port number of 25000 (same as the server) and that the Remote IP address matches the server's IP address. Also make sure that the data type is set to uint8.
+12. Build, Deploy and Start the Simulink model on the First Android Device.
+13. After deploying the application on the android device, allow all permissions that may show on the android display screen.
+
+##### Both Android Devices ([ButtonControlApp_Client.slx](Link)) ([ButtonControlApp_Server.slx](Link))
+14. After deploying both Simulink models on their corresponding Android device, make sure the TCP/IP connection is connected under the Log tab on both Android devices.
+15. Connect the second device to the Arduino robot using a USB cable and USB to type-C convertor and attach the second android device to the Arduino robot such that the android device would not fall off when the robot begins to move.
+16. Ensure that the USB connector is connected which is shown in the notification tab on the second android device.
+17. Ensure that the battery pack is turned on.
+18. Test out the TCP/IP connection between android devices by pressing any button displayed on the first android device's display and the corresponding response signal should be shown in the second android device's display.
+19. If no movement is shown but noise is coming from the board, either the batteries are low or the CarSpeed variable is too low for movement. Modify the ControlArduinoRobot model and increase the CarSpeed to any value not more than 255 then follow the same steps to deploy the ControlArduinoRobot model on the Arduino robot. The steps for the communication type doesn't need to be repeated.
+20. The Arduino robot with second android device should move independently from the first android device (wireless connection).
+21. Play around with the wireless Arduino Uno robot.
 
 ## Arduino Uno Robot with Android Face Detection and Tracking
-### Required Hardware
-* An Android Device
-* Elegoo Arduino Uno Robot Car Kit V3.0 (If using a different Ardunio setup, the simulink model would need to be modified)
-* Micro usb to USB convertor
-* Serial Connection Cable
-* Selfie Stick (Attach phone to Arduino robot)
-### Required Toolboxes or Software
-* Simulink Support Package for Arduino Hardware
-* Simulink Support Package for Android Devices 
-  * Android Studio (Arctic Fox 2020.3.1 Patch 4)
-    * Android SDK Build Tools - 32.0.0
-    * NDK (side-by-side) - 23.1.7779620
-    * Android SDK Platform Tools - 32
-  * Open CV Library - 4.5.2
-  * ARM Compute Library - 19.05
-* Computer Vision Toolbox
-* C++ Compiler (preferably Microsoft Visual Studio compiler)
-* Embedded Coder add-on
-### Procedure
 
-## Additional Codes (Standalone Arduino)
-### Required Toolboxes or Software
-* Arduino IDE Software
-* Libraries?
-
-#### Obstacle Avoidance Robot
-
-#### Line Following Robot
+### Android Device ([FaceDetectResponseApp.slx](Link))
+1. Launch the Simulink model on MATLAB.
+2. Connect the Android device to the computer.
+3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Android Device and make sure that the connected Android device is visible under the device options in the target hardware resources setting. 
+4. In the Face detection and Tracking Block, open the Android camera block properties and select the back camera with a pixel size of 384x384.
+5. Build, Deploy and Start the Simulink model on the Android device.
+6. After deploying the application on the android device, allow all permissions that are shown on the android display screen.
+7. Ensure that the phone is rotated 90 deg counterclockwise such that the phone is in a landscape position. The face detection algorithm only works in this position.
+8. Ensure that the coordinates of the corner points are of expected values.
+9. Ensure that the reponse signals are to the expected values. This is done by following the response signal displayed on the android screen when a face is detected. This should allow the camera/phone to stop at a predefined distance away from the detected face. The description to the response signals are noted below:
+   - Stop = 0
+   - Forward = 1
+   - Reverse = 2
+   - Right = 3
+   - Left = 4
+### Arduino Uno Controller ([ControlArduinoRobot.slx](Link))
+1. Launch the Simulink model on MATLAB.
+2. Connect the Arduino Uno robot to the computer.
+3. In the Hardware tab, select hardware settings and make sure that the connected hardware board shows Arduino Uno. If the the port number of the connected Arduino Uno board is known, the number can be manually inputted under Host COM port found in the Target hardware resources under Host-Board connection.
+5. Build, Deploy and Start the Simulink model on the connected Arduino Uno board.
+6. After deploying the Simulink model, attach the selfie stick to the Robot by pushing one end in the top back hole of the robot and allow the stick to lean forward.
+7. Fix the lean angle of the selfie stick with elastic bands that are attached to the front part of the robot.
+8. Attach the Android device to the selfie stick to achieve an appropiate height away from the ground.
+9. Connect the Android device to the Arduino Robot using the USB cable and USB to type-C convertor.
+10. Ensure that the USB connector is connected which is shown in the notification tab on the android device.
+11. Ensure that the battery pack is turned on.
+12. Add a customizable ballast on the battery pack to counteract the front center of gravity that is produced due to the weight of the phone. The ballast would have a container that can allow the weight to be changed by adding or removing coins.
+13. Allow the back wheels to have less friction than the front wheels by fine-tuning the weight of the ballast. This should allow the vehicle to move at a controlled speed to allow the face to be detected more easily and accurately. This calibration can be done using the ButtonControlApp Simulink model when calibrating specific movements.
+14. Test out the Face detection Android-Arduino robot in a well-lit area and in the same place where the calibration was done as different grounds would have different coefficients of frictions and would cause the robot to either slow down or speed up.
+15. Once a face is detected, test the robot by moving the face left and right and see if the robot would move with the face.
+16. Once the robot stops at the predefined distance, move the face closer to see if the robot would move back to keep the distance between the phone and the detected face constant.
+17. Play around with the Face Detection and Tracking Android-Arduino Uno robot.
 
 # Demo
 Add a video or animated gif/picture to showcase the code in operation.
@@ -94,5 +159,3 @@ Add reference papers, data, or supporting material that has been used, if any.
 1. [Detect and Track Face on Android Device](https://www.mathworks.com/help/supportpkg/android/ref/detect-and-track-face-on-an-android-device.html)
 2. [Controlling Elegoo Robot using Android Phone](https://www.youtube.com/watch?v=Tr4ih_EBk8c)
 3. [TCP/IP Connection with Android Devices Example](https://www.mathworks.com/help/supportpkg/android/ref/connect-android-device-to-lego-mindstorms-ev3.html)
-4. [Arduino Uno Robot Car Kit](https://www.elegoo.com/products/elegoo-smart-robot-car-kit-v-3-0-plus)
-5. 
