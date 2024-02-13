@@ -23,6 +23,8 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 
 # How to run section
+Before following the How to run section for each application, it was assumed that all the [Required Hardware](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/edit/main/README.md#android-face-detection-and-human-tracking-arduino-robot) were assembled and ready to use and it was also assumed that all the [Required Toolboxes and Software]() were installed. The list below shows all the applications used to solve the problem.
+
 1. [Face Detection Application on Android Device](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#face-detection-application-on-android-device)
 2. [Control Arduino Uno Robot with Android Device/s](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#control-arduino-uno-robot-with-android-devices)
    - [Arduino Uno Controller](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#arduino-uno-controller-controlarduinorobotslx)
@@ -39,7 +41,7 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 * [Serial Connection Cable](https://www.takealot.com/hq-usb-2-0-a-to-b-3-0m-hp-canon-lexmark-printer-cable/PLID71037965?gad_source=1&gclid=CjwKCAiA_aGuBhACEiwAly57MeJWeZzAQiE4Sr9q8wg4TXOIqfKfltW6FqdJqaUklDWqF5TO4Fw-OhoC8kAQAvD_BwE&gclsrc=aw.ds)
 * Selfie Stick (Attach phone to Arduino robot)
 
-## Required Toolboxes or Software
+## Required Toolboxes and Software
 * [MATLAB R2023a](https://www.mathworks.com/products/new_products/release2023a.html)
 * [Simulink Support Package for Arduino Hardware](https://www.mathworks.com/matlabcentral/fileexchange/40312-simulink-support-package-for-arduino-hardware)
 * [Simulink Support Package for Android Devices](https://www.mathworks.com/hardware-support/android-programming-simulink.html) 
