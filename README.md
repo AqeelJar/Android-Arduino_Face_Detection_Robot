@@ -1,4 +1,4 @@
-# Android Face Detection and Human Tracking Arduino Robot
+# Face Detection and Human Tracking Android-Arduino Robot
 Solution to project number 214 in the [MATLAB and Simulink Challenge](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub).
 
 Project Title: [Face Detection and Human Tracking Robot](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub/tree/main/projects/Face%20Detection%20and%20Human%20Tracking%20Robot#project-description)
