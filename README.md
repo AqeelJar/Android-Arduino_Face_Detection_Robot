@@ -163,12 +163,19 @@ Before following the How to run section for each application, it was assumed tha
 16. Once the robot stops at the predefined distance, move the face closer to see if the robot would move back to keep the distance between the phone and the detected face constant.
 17. Play around with the Face Detection and Tracking Android-Arduino Uno robot.
 
-# Demo
+# Demo Videos
 1. [Face Detection App](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/FaceDetectionApp.mp4)
+   - This video show how the face detection is used and shows the position of the detected face using the front camera.
+   - This video also shows how slow the face detection responds when using a high quality pixel size of 640x480.
 2. [Button Control with Direct Serial communication](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20Direct%20Serial.mp4)
+   - This video shows how the user can communicate with the Arduino Uno robot with Android device using a direct serial communication line.
+   - This video also shows how the robot needs to be close to the user when in operation.
 3. [Button Control with TCP/IP Communication between android devices](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20TCP-IP.mp4)
+   - This video shows how the user can communicate with the Arduino Uno robot using a TCP/IP Communication line between 2 Android devices.
+   - This video also shows how the robot doesn't need to be close to the user when in operation.
 4. [Arduino Uno Robot with Android Face Detection and Tracking](Link)
-  
+   - This video shows how the face detection from the Android device is used to control the motion of the Arduino Uno robot.
+   - Due to the robot being small, a picture of a human face is used for the face detection instead of an actual person's face.
 # References
 1. [Detect and Track Face on Android Device](https://www.mathworks.com/help/supportpkg/android/ref/detect-and-track-face-on-an-android-device.html)
 2. [Controlling Elegoo Robot using Android Phone](https://www.youtube.com/watch?v=Tr4ih_EBk8c)
