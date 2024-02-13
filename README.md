@@ -164,9 +164,9 @@ Before following the How to run section for each application, it was assumed tha
 17. Play around with the Face Detection and Tracking Android-Arduino Uno robot.
 
 # Demo
-1. [Face Detection App](Link)
-2. [Button Control with Direct Serial communication](Link)
-3. [Button Control with TCP/IP Communication between android devices](Link)
+1. [Face Detection App](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/FaceDetectionApp.mp4)
+2. [Button Control with Direct Serial communication](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20Direct%20Serial.mp4)
+3. [Button Control with TCP/IP Communication between android devices](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20TCP-IP.mp4)
 4. [Arduino Uno Robot with Android Face Detection and Tracking](Link)
   
 # References
