@@ -23,7 +23,7 @@ Therefore, a low-cost, user-friendly, and real-time autonomous human tracking ro
 
 
 # How to run section
-Before following the How to run section for each application, it was assumed that all the [Required Hardware](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/edit/main/README.md#android-face-detection-and-human-tracking-arduino-robot) were assembled and ready to use and it was also assumed that all the [Required Toolboxes and Software](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/README.md#required-toolboxes-and-software) were installed. The list below shows all the applications used to solve the problem.
+Before following the How to run section for each application, it was assumed that all the [Required Hardware](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/README.md#required-hardware) were assembled and ready to use and it was also assumed that all the [Required Toolboxes and Software](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/README.md#required-toolboxes-and-software) were installed. The list below shows all the applications used to solve the problem.
 
 1. [Face Detection Application on Android Device](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#face-detection-application-on-android-device)
 2. [Control Arduino Uno Robot with Android Device/s](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/tree/main#control-arduino-uno-robot-with-android-devices)
