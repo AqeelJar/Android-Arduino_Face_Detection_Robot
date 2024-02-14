@@ -173,7 +173,7 @@ Before following the How to run section for each application, it was assumed tha
 3. [Button Control with TCP/IP Communication between android devices](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20TCP-IP.mp4)
    - This video shows how the user can communicate with the Arduino Uno robot using a TCP/IP Communication line between 2 Android devices.
    - This video also shows how the robot doesn't need to be close to the user when in operation.
-4. [Arduino Uno Robot with Android Face Detection and Tracking](Link)
+4. [Arduino Uno Robot with Android Face Detection and Tracking](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/FaceDetectionAndroid-ArduinoRobot.mp4)
    - This video shows how the face detection from the Android device is used to control the motion of the Arduino Uno robot.
    - Due to the robot being small, a picture of a human face is used for the face detection instead of an actual person's face.
 # References
