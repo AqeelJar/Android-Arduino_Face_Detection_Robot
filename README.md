@@ -5,7 +5,7 @@ Project Title: [Face Detection and Human Tracking Robot](https://github.com/math
 ## Problem Description 
 Human-robot interaction is crucial in many computer vision applications, such as activity identification, automobile safety, smart home security applications, and surveillance. A robot's job is to be an efficient assistant to aid humans with their tasks. The robot must be proficient in communicating with and interacting with people. In this situation, the main requirement for the vision system in this type of robot is a human face-tracking system. Robotic human-robot interaction can be improved via face detection. Detecting and tracking humans automatically using a sensor or algorithm is a difficult problem due to the wide variety of positions, and system complexity. It is, ultimately, a detailed optimisation problem.
 
-Therefore, a low-cost, user-friendly, and real-time autonomous human tracking robot using an Android mobile was put into action. The human tracking is done by a face detection Simulink model on the Android device while the real-time control is done by an Arduino Uno Controller. The face detection model was designed using the Computer Vision Toolbox and Deep Learning Toolbox on Simulink. The hardware support packages are used to interface and deploy the Android and Arduino devices with Simulink models. The different types of connection available between the Android device and Arduino Uno controller were also taken into consideration. The Android device was able to run the face detection algorithm and send the required information to the Arduino Controller to control the movements of the robot to achieve a predefined distance between the robot and the human. Therefore, a deep learning-based face detection and tracking Robot was developed.
+Therefore, a low-cost, user-friendly, and real-time autonomous human tracking robot using an Android mobile was put into action. The human tracking is done by a face detection Simulink model on the Android device while the real-time control is done by an Arduino Uno Controller. The face detection model was designed using the Computer Vision Toolbox on Simulink. The hardware support packages are used to interface and deploy the Android and Arduino devices with the Simulink models. The different types of connection available between the Android device and Arduino Uno controller were also taken into consideration. The Android device was able to run the face detection algorithm and send the required information to the Arduino Controller to control the movements of the robot to achieve a predefined distance between the robot and the human. Therefore, a machine learning-based face detection and tracking Robot was developed.
 
 # Project details
 
@@ -52,7 +52,6 @@ Before following the How to run section for each application, it was assumed tha
   * Open CV Library - 4.5.2
   * ARM Compute Library - 19.05
 * [Computer Vision Toolbox](https://www.mathworks.com/products/computer-vision.html)
-* [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
 * [C++ Compiler (preferably Microsoft Visual Studio compiler)](https://visualstudio.microsoft.com/vs/features/cplusplus/)
  * [Choose a compiler in MATLAB](https://www.mathworks.com/help/matlab/matlab_external/choose-c-or-c-compilers.html)
 * [Embedded Coder add-on](https://www.mathworks.com/products/embedded-coder.html)
@@ -167,15 +166,27 @@ Before following the How to run section for each application, it was assumed tha
 1. [Face Detection App](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/FaceDetectionApp.mp4)
    - This video show how the face detection is used and shows the position of the detected face using the front camera.
    - This video also shows how slow the face detection responds when using a high quality pixel size of 640x480.
+
+   ![FaceDetectionApp_1](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/assets/119345289/376a5be0-3c28-4931-be32-25d77b5929bc)
+
 2. [Button Control with Direct Serial communication](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20Direct%20Serial.mp4)
    - This video shows how the user can communicate with the Arduino Uno robot with Android device using a direct serial communication line.
    - This video also shows how the robot needs to be close to the user when in operation.
+   
+   ![ButtonControlApp - Direct Serial_1](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/assets/119345289/07566489-51cc-42d5-bc44-f6b14960c7f9)
+
 3. [Button Control with TCP/IP Communication between android devices](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/ButtonControlApp%20-%20TCP-IP.mp4)
    - This video shows how the user can communicate with the Arduino Uno robot using a TCP/IP Communication line between 2 Android devices.
    - This video also shows how the robot doesn't need to be close to the user when in operation.
+     
+   ![ButtonControlApp - TCP-IP_1](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/assets/119345289/5373425a-dd5c-42ed-b3e8-af8c9dba33d3)
+
 4. [Arduino Uno Robot with Android Face Detection and Tracking](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/blob/main/Videos/FaceDetectionAndroid-ArduinoRobot.mp4)
    - This video shows how the face detection from the Android device is used to control the motion of the Arduino Uno robot.
    - Due to the robot being small, a picture of a human face is used for the face detection instead of an actual person's face.
+     
+   ![FaceDetectionAndroid-ArduinoRobot_1](https://github.com/AqeelJar/Android-Arduino_Face_Detection_Robot/assets/119345289/a1d23a96-0d42-4c4d-96be-9ae8e479ef47)
+
 # References
 1. [Detect and Track Face on Android Device](https://www.mathworks.com/help/supportpkg/android/ref/detect-and-track-face-on-an-android-device.html)
 2. [Controlling Elegoo Robot using Android Phone](https://www.youtube.com/watch?v=Tr4ih_EBk8c)
